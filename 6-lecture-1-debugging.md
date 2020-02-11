@@ -111,3 +111,18 @@ _Let's talk about test-driven development a little._
 ### What is a test?
 
 ---
+
+```js
+//Example
+function sum(num1, num2) {
+    return num1 + num2;
+}
+
+//a test
+function sumTest(x, y, z) {
+    return sum(x, y) === z; //calls the coded function and makes sure it behaves as expected
+}
+
+//test case
+sumTest(5, 5, 10);
+```

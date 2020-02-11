@@ -13,15 +13,29 @@ let verifyEquals = require('../../assets/verify-equals');
 // f(["foo", -1]) // ""
 
 function f(arr) {
-    
+    if (isNaN(arr[1]) || typeof(arr[0]) !== "string") {
+        return undefined;
+    }
+    if (arr[1] <= 0) {
+        return "";
+    }
+    else {
+        let superString = "";
+
+        for (let i = 0; i < arr[1]; ++i) {
+            superString = superString.concat(arr[0]);
+        }
+        
+        return superString;
+    }
 }
 
 // Step 2
-// We need 7 test cases.
+// We need 8 test cases.
 // Don't forget to test all of the question parameters
 
-let inputs = [];
-let outputs = [];
+let inputs = [["ye", 3], ["ya", 2], ["yo", 1], ["hi", 4], ["ho", 3], ["six", "six"] ["ouch", 0], ["test", -3]];
+let outputs = ["yeyeye", "yaya", "yo", "hihihihi", "hohoho", undefined, "", ""]
 
 // Step 3
 // Run this file in the debugger.
