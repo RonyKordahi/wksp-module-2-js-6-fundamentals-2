@@ -21,8 +21,8 @@ Functions declarations are also hoisted, but these go to the very top, so will s
 console.log(greeting);
 var greeting = 'Hello';
 
-// a. 'Hello'
-// b. undefined
+// a. 'Hello' 
+// b. undefined <-- happens. Hoisting brings to the top the variable declaration but not the value.
 // c. Uncaught ReferenceError: greeting is not defined
 ```
 
@@ -39,7 +39,7 @@ const anotherGreeting = 'Good evening';
 
 // a. 'Good evening'
 // b. undefined
-// c. ReferenceError: can't access lexical declaration `anotherGreeting' before initialization
+// c. ReferenceError: can't access lexical declaration `anotherGreeting' before initialization <-- const not hoisted, code doesn't know variable exists
 ```
 
 ---
@@ -51,7 +51,7 @@ let yetAnotherGreeting = 'Goodnight';
 
 // a. 'Good evening'
 // b. undefined
-// c. ReferenceError: can't access lexical declaration `anotherGreeting' before initialization
+// c. ReferenceError: can't access lexical declaration `anotherGreeting' before initialization <--
 ```
 
 ---
@@ -68,6 +68,8 @@ function greetMe() {
 }
 greetMe();
 var yourName = 'Fred';
+
+//outputs "Hi undefined!"
 ```
 
 ---

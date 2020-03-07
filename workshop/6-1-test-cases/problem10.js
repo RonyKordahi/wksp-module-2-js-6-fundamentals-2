@@ -11,12 +11,24 @@ let verifyEquals = require('../../assets/verify-equals');
 //    - Use the toUpperCase string method
 
 function f(str) {
+  let splitStr = str.split("");
+  splitStr[0] = splitStr[0].toUpperCase();
 
+  for (let i = 1; i < splitStr.length; ++i) {
+    if (splitStr[i - 1] === " ") {
+      splitStr[i] = splitStr[i].toUpperCase();
+    }
+    else {
+      splitStr[i] = splitStr[i].toLowerCase();
+    }
+  }
+
+  return splitStr.join("");
 }
 
 // Test cases
-let inputs = [];
-let outputs = [];
+let inputs = ["hello world", "hi", "why not", "three words this time", "I COUNTED WRONG"];
+let outputs = ["Hello World", "Hi", "Why Not", "Three Words This Time", "I Counted Wrong"];
 
 // STOP -----------------------------------------------------------------
 // No code changes below. This is the actual test that will run your test cases and validate your function.

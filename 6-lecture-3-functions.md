@@ -18,6 +18,11 @@ is a variable in function, or method, definition.
 
 ```js
 // Example
+function greeting(name) { //parameter
+    console.log(name);
+}
+
+greeting("Rony");
 
 ```
 
@@ -29,7 +34,11 @@ is the value given to the parameter when a function, or method is called.
 
 ```js
 // Example
+function greeting(name) {
+    console.log(name);
+}
 
+greeting("Rony"); //argument
 ```
 
 ---
@@ -41,7 +50,7 @@ function f() {
     console.log("hello");
 }
 
-f("bye");
+f("bye"); //output is "hello"
 ```
 
 ---
